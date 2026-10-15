@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FlashCards</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="site-header">
+        <h1>Flashcards</h1>
+        <button id="add-card" type="button">Add card</button>
+    </header>
+
+    <div class="layout">
+        <nav class="decks" aria-label="Decks">
+            <h2>Decks</h2>
+            <ul id="deck-list"></ul>
+        </nav>
+
+        <main>
+            <section class="study" aria-labelledby="deck-title">
+                <h2 id="deck-title">Select a deck</h2>
+                <button id="card" class="card" type="button" aria-live="polite">
+                </button>
+            </section>
+        </main>
+    </div>
+</body>
+</html>
