@@ -7,24 +7,30 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header class="site-header">
-        <h1>Flashcards</h1>
-        <button id="add-card" type="button">Add card</button>
-    </header>
+   <header class="app-header">
+    <h1>Flashcards</h1>
+   </header>
 
-    <div class="layout">
-        <nav class="decks" aria-label="Decks">
-            <h2>Decks</h2>
-            <ul id="deck-list"></ul>
-        </nav>
+   <nav class="app-sidebar" aria-label="Decks">
+    <h2>Decks</h2>
+    <ul>
+        <li><button type="button">Deck name</button></li>
+    </ul>
+   </nav>
 
-        <main>
-            <section class="study" aria-labelledby="deck-title">
-                <h2 id="deck-title">Select a deck</h2>
-                <button id="card" class="card" type="button" aria-live="polite">
-                </button>
-            </section>
-        </main>
-    </div>
+   <main class="app-main">
+    <section class="cards" aria-label="Cards">
+        <h2>Cards</h2>
+        <div class="card-grid">
+            <article class="card">Card</article>
+        </div>
+    </section>
+   </main>
+
+   <footer class="app-footer">
+    <p>Flashcards</p>
+   </footer>
+
+   <script src="app.js"></script>
 </body>
 </html>
