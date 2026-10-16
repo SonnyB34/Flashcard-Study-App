@@ -7,30 +7,52 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-   <header class="app-header">
+  <div class="app">
+  <header class="app-header">
     <h1>Flashcards</h1>
-   </header>
-
-   <nav class="app-sidebar" aria-label="Decks">
-    <h2>Decks</h2>
-    <ul>
-        <li><button type="button">Deck name</button></li>
-    </ul>
-   </nav>
-
-   <main class="app-main">
-    <section class="cards" aria-label="Cards">
-        <h2>Cards</h2>
-        <div class="card-grid">
-            <article class="card">Card</article>
-        </div>
-    </section>
-   </main>
-
-   <footer class="app-footer">
-    <p>Flashcards</p>
-   </footer>
-
-   <script src="app.js"></script>
+    <button class="btn btn-primary" id="new-deck-btn" type="button">New deck</button>
+  </header>
+  <nav class="sidebar" aria-label="Decks"><ul class="deck-list" id="deck-list"></ul></nav>
+  <main class="main" id="main"></main>
+  <footer class="app-footer">Click a card or press Space to flip. Use the arrow keys to move between cards.</footer>
+</div>
+ 
+<dialog id="deck-dialog" aria-labelledby="deck-dialog-title">
+  <form method="dialog" id="deck-form">
+    <h2 id="deck-dialog-title">New deck</h2>
+    <label for="deck-name">Deck name</label>
+    <input id="deck-name" required maxlength="60" autocomplete="off">
+    <div class="actions">
+      <button class="btn" type="button" data-close>Cancel</button>
+      <button class="btn btn-primary" type="submit">Save deck</button>
+    </div>
+  </form>
+</dialog>
+ 
+<dialog id="card-dialog" aria-labelledby="card-dialog-title">
+  <form method="dialog" id="card-form">
+    <h2 id="card-dialog-title">New card</h2>
+    <label for="card-front">Front</label>
+    <textarea id="card-front" rows="2" required></textarea>
+    <label for="card-back">Back</label>
+    <textarea id="card-back" rows="2" required></textarea>
+    <div class="actions">
+      <button class="btn" type="button" data-close>Cancel</button>
+      <button class="btn btn-primary" type="submit">Save card</button>
+    </div>
+  </form>
+</dialog>
+ 
+<dialog id="confirm-dialog" aria-labelledby="confirm-title">
+  <form method="dialog">
+    <h2 id="confirm-title">Delete deck?</h2>
+    <p id="confirm-text"></p>
+    <div class="actions">
+      <button class="btn" type="button" data-close>Keep deck</button>
+      <button class="btn btn-danger" type="submit" value="delete">Delete deck</button>
+    </div>
+  </form>
+</dialog>
+  <script src="app.js"></script>
 </body>
 </html>
